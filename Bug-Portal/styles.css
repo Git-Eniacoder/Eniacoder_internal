@@ -1,0 +1,100 @@
+body{
+  background-color: #141114;
+      background-image: linear-gradient(335deg, black 23px, transparent 23px), linear-gradient(155deg, black 23px, transparent 23px), linear-gradient(335deg, black 23px, transparent 23px), linear-gradient(155deg, black 23px, transparent 23px);
+      background-size: 58px 58px;
+      background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+}
+
+h1{
+  margin: 50px 0 0 0;
+  padding: 0;
+  color: #4cd3c2;
+  font-size:7vw;
+  font-family:'Caveat', cursive;
+}
+
+.container
+{
+  margin-top:4vw;
+}
+
+.c1
+{
+  margin-top:20px;
+}
+
+.log
+{
+  color: #f4f4f4;
+}
+
+
+h2
+{
+  color: #f4f4f4;
+  font-size:4vw;
+  font-family:'Caveat', cursive;
+}
+
+
+
+h1 span
+{
+  display:table-cell;
+  margin: 0;
+  padding: 0;
+   animation: animate 1s linear infinite;
+}
+
+h1 span:nth-child(1)
+{
+  animation-delay:0s;
+}
+h1 span:nth-child(2)
+{
+  animation-duration:0.5s;
+}
+h1 span:nth-child(3)
+{
+  animation-duration:0.75s;
+}
+h1 span:nth-child(4)
+{
+  animation-duration:1s;
+}
+h1 span:nth-child(5)
+{
+  animation-duration:1.25s;
+}
+h1 span:nth-child(6)
+{
+  animation-duration:1.75s;
+}
+h1 span:nth-child(7)
+{
+  animation-duration:2s;
+}
+h1 span:nth-child(8)
+{
+  animation-duration:2.25s;
+}
+
+
+@keyframes animate {
+  0%,100%
+  {
+    color: #084177;
+    filter: blur(2px);
+    text-shadow:0 0 10px #00a8cc,
+                0 0 20px #00a8cc,
+                0 0 30px #00a8cc;
+  }
+
+  5%,95%
+  {
+    color: #00a1ab;
+    filter: blur(0px);
+    text-shadow: 0 0 10px none;
+  }
+
+}
