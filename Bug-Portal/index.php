@@ -71,23 +71,21 @@ if(isset($_POST['submit']))
  $em = $_POST['email'];
  $pas = $_POST['password'];
 
-  $query = "SELECT * FROM LOGIN WHERE EMAIL = '$em'";
+  $query = "SELECT * FROM login Where EMAIL = '$em'";
   $data= mysqli_query($conn,$query);
   $result = mysqli_fetch_assoc($data);
+  
 
  if(($result['Password'] == $pas) && ($result['Email'] == $em))
  {
   $_SESSION['id'] =$result['id'];
   header('location:project.php');
-
- }
+}
  else
   {
   echo "<script>alert('Your Email or Password is incorrect')</script>";
   }
-
-
- }
+}
  ?>
 
 
