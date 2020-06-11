@@ -1,7 +1,7 @@
 <?php
 $servername = "13.233.17.47";
-$username = "navneet";
-$password = "@Navneet1";
+$username = "subhashish";
+$password = "HelloIndia@1";
 $dbname = "Bugportal";
 
 $conn = mysqli_connect($servername,$username,$password,$dbname);

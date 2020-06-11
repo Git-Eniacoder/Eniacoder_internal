@@ -12,7 +12,7 @@ if(count($part)>0)
   {
    $t = $part;
 
-   $query = "SELECT * FROM PROJECT WHERE ID = '$t'";
+   $query = "SELECT * FROM project WHERE ID = '$t'";
    $data= mysqli_query($conn,$query);
    $result = mysqli_fetch_assoc($data);
    echo $result['pname'];
