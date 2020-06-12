@@ -14,7 +14,7 @@ session_start();
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylebuttom.css">
     <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
     <title>Eniacoder</title>
   </head>
@@ -35,66 +35,38 @@ session_start();
   <center>
     <div class="container">
       <h1>
-        <span>Your_</span>
-        <span>P</span>
-        <span>r</span>
-        <span>o</span>
-        <span>j</span>
-        <span>e</span>
-        <span>c</span>
-        <span>t</span>
+        <span>B</span>
+        <span>u</span>
+        <span>g</span>
+        <span>s</span>
       </h1>
+
 
     </div>
    </center>
 
-<?php
+   <?php
 
-$temp = $_SESSION['id'];
-if($temp == 0)
-{
-
-  $query = "SELECT * FROM project";
-  $data= mysqli_query($conn,$query);
-  $num = mysqli_num_rows($data);
-  if($num != 0)
-  {
-    while($result = mysqli_fetch_assoc($data))
-    {
-      
-      $w = $result['id'];
-      echo "<h3 class='pro'> <span> > </span> <a href='bug.php?q=$w' class='pn'>".$result['pname']."</a></h3><br />";
-    }
-  }
+   $temp = $_GET['q'];
+      $query = "SELECT * FROM bug WHERE ID = '$temp'";
+      $data= mysqli_query($conn,$query);
+      $num = mysqli_num_rows($data);
 
 
+      if($num != 0)
+      {
+        while($result = mysqli_fetch_assoc($data))
+        {
+          echo "<h3 class='pro'> <span> > </span> <a href='#' class='pn'>".$result['Bug']."</a></h3><br />";
 
-}
-else
-{
-  $part = preg_split('/\s|\.|,/',$temp);
+          echo '<label class="switch">
+  <input type="checkbox">
+  <span class="slider round"></span>
+</label>';
+        }
+      }
+    ?>
 
-  if(count($part)>0)
-  {
-
-    foreach($part as $part)
-    {
-
-     $t = $part;
-
-     $query = "SELECT * FROM project WHERE ID = '$t'";
-     $data= mysqli_query($conn,$query);
-     $result = mysqli_fetch_assoc($data);
-
-
-     echo "<h3 class='pro'> <span> > </span> <a href='bug.php?q=$t' class='pn'>".$result['pname']."</a></h3><br />";
-   }
-  }
-}
-
-
-
- ?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

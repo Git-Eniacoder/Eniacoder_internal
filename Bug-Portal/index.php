@@ -74,10 +74,11 @@ if(isset($_POST['submit']))
   $query = "SELECT * FROM login Where EMAIL = '$em'";
   $data= mysqli_query($conn,$query);
   $result = mysqli_fetch_assoc($data);
-  
+
 
  if(($result['Password'] == $pas) && ($result['Email'] == $em))
  {
+  $_SESSION['user'] =$result['email'];
   $_SESSION['id'] =$result['id'];
   header('location:project.php');
 }

@@ -13,6 +13,22 @@ h1{
   font-family:'Caveat', cursive;
 }
 
+
+.pro
+{
+   font-size:3vw;
+  font-family: 'Knewave', cursive;
+}
+
+.pn
+{
+   font-size:1.75vw;
+   color:#f7f7f7;
+font-family:'Caveat', cursive;
+  margin-left:10px;
+}
+
+
 .container
 {
   margin-top:4vw;
@@ -45,6 +61,16 @@ h1 span
   padding: 0;
    animation: animate 1s linear infinite;
 }
+
+h3 span
+{
+
+  margin: 0;
+  padding: 0;
+  animation: animate 1s linear infinite;
+}
+
+
 
 h1 span:nth-child(1)
 {
