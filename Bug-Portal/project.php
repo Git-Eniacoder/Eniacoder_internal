@@ -1,7 +1,6 @@
 <?php
 include("connection.php");
 session_start();
-
  ?>
 
 <!doctype html>
@@ -61,7 +60,7 @@ if($temp == 0)
   {
     while($result = mysqli_fetch_assoc($data))
     {
-      
+
       $w = $result['id'];
       echo "<h3 class='pro'> <span> > </span> <a href='bug.php?q=$w' class='pn'>".$result['pname']."</a></h3><br />";
     }

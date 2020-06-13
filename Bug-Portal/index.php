@@ -78,7 +78,7 @@ if(isset($_POST['submit']))
 
  if(($result['Password'] == $pas) && ($result['Email'] == $em))
  {
-  $_SESSION['user'] =$result['email'];
+  $_SESSION['user'] =$result['em'];
   $_SESSION['id'] =$result['id'];
   header('location:project.php');
 }
