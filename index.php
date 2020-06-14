@@ -42,18 +42,20 @@
   </div>
 </nav><br><br>
 <div class="row " style="align:center;">
-<div class="card text-white bg-success" style="width: 18rem; margin:2rem">
+<a href="bug"><div class="card text-white bg-success" style="width: 18rem; margin:2rem">
   <img class="card-img-top" src="image/bug.jpg" alt="Bug Managment System">
   <div class="card-body">
     <p class="card-text">Bug Management System</p>
   </div>
-</div>	
+</div>	</a>
+<a href="task">
 <div class="card text-white bg-primary" style="width: 18rem; margin:2rem">
   <img class="card-img-top" src="image/task.png" alt="Card image cap">
   <div class="card-body">
     <p class="card-text">Task Management System</p>
   </div>
 </div>	
+</a>
 </div>
 
 <?php include('footer.php');?>
