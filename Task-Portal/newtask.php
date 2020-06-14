@@ -46,7 +46,7 @@ $num = mysqli_num_rows($data);
             <input type="text" name="name" class="form-control" placeholder="Task Name" required="required">
         </div>
         <div class="form-group">
-            <input type="textbox" name="des" class="form-control" placeholder="Task Description" required="required">
+            <textarea type="textbox" name="des" class="form-control" placeholder="Task Description" required="required"></textarea>
         </div>
 		<input list="encodings" value="" name="email" class="col-sm-6 custom-select custom-select-sm" placeholder="Assign to">
 		<datalist id="encodings">
