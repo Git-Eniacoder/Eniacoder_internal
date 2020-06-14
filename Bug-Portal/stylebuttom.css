@@ -57,32 +57,3 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-
-
-
-/* Popup container - can be anything you want */
-.popup {
-  position:center;
-
-}
-
-/* The actual popup */
-.popup .popuptext {
-  visibility:hidden;
-  width: auto;
-  background-color: #000000;
-  color: #fff;
-  text-align: center;
-  position: absolute;
-}
-
-/* Popup arrow */
-.popup .popuptext::after {
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
-
-/* Toggle this class - hide and show the popup */
-.popup .show {
-  visibility: visible;
-}

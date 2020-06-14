@@ -63,7 +63,7 @@
 
 
 <?php
-session_start();
+
 include("connection.php");
 
 if(isset($_POST['submit']))
@@ -78,7 +78,8 @@ if(isset($_POST['submit']))
 
  if(($result['Password'] == $pas) && ($result['Email'] == $em))
  {
-  $_SESSION['user'] =$result['em'];
+  session_start();
+  $_SESSION['user'] =$result['Email'];
   $_SESSION['id'] =$result['id'];
   header('location:project.php');
 }

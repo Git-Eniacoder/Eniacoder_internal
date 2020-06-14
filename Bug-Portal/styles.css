@@ -124,3 +124,11 @@ h1 span:nth-child(8)
   }
 
 }
+
+table,th,td
+{
+border: 2px solid white;
+border-spacing: 5px;
+color:white;
+padding:10px;
+}
