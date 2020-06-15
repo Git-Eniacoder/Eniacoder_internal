@@ -48,7 +48,7 @@ $num = mysqli_num_rows($data);
         <div class="form-group">
             <textarea type="textbox" name="des" class="form-control" placeholder="Task Description" required="required"></textarea>
         </div>
-		<input list="encodings" value="" name="email" class="col-sm-6 custom-select custom-select-sm" placeholder="Assign to">
+		<input list="encodings" value="" name="email" class="col-sm-6 custom-select custom-select-sm" placeholder="Assign to" required>
 		<datalist id="encodings">
 			<?php
 				while($result = mysqli_fetch_assoc($data))
@@ -58,7 +58,7 @@ $num = mysqli_num_rows($data);
 			?>
 		</datalist><br><br>
 		<span style="font-weight:bold">Deadline:</span><br>
-		<input type="date" id="start" name="dead" placeholder="deadline"><br><br>
+		<input type="date" id="start" name="dead" placeholder="deadline" required><br><br>
 		
         <div class="form-group">
             <button type="submit" name="submit" class="btn btn-primary btn-block">Add Task</button>
