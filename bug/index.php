@@ -4,101 +4,89 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
-
-
-    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+   
     <title>Eniacoder</title>
+    <style type="text/css">
+	.login-form {
+		width: 340px;
+    	margin: 50px auto;
+	}
+    .login-form form {
+    	margin-bottom: 15px;
+        background: #f7f7f7;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        padding: 30px;
+    }
+    .login-form h2 {
+        margin: 0 0 15px;
+    }
+    .form-control, .btn {
+        min-height: 38px;
+        border-radius: 2px;
+    }
+    .btn {        
+        font-size: 15px;
+        font-weight: bold;
+    }
+</style>
   </head>
   <body>
-
-
-
 <!-- NAVBAR -->
-  <header>
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-black">
-      <a class="navbar-brand" href="index.php">Eniacoder</a>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Eniacoder</a>
     </nav>
   </header>
+  
 
-
-    <center>
-      <div class="main">
-        <h1>
-          <span>Bug</span>
-          <span>-</span>
-          <span>P</span>
-          <span>o</span>
-          <span>r</span>
-          <span>t</span>
-          <span>a</span>
-          <span>l</span>
-        </h1>
-      </div>
-    </center>
-
-
-
-    <center>
-      <div class="container">
-        <h2>Login</h2>
-        <form action="index.php" method="POST" class="c1">
-            <div class="form-group">
-              <label class="log">Email address</label>
-              <input type="email" name="email" class="form-control" id="exampleInputEmail1" style="width:300px;" aria-describedby="emailHelp">
-
-              </div>
-              <div class="form-group">
-              <label class="log">Password</label>
-              <input type="password" name="password" class="form-control" style="width:300px;" id="exampleInputPassword1">
-              </div>
-             <button class="btn btn-info my-2 my-sm-0" type="submit" name="submit">Submit</button>
-       </form>
-      </div>
-     </center>
+    <div class="login-form">
+<h1 class="text-center">BUG-PORTAL</h1>  
+    <form action="index.php" method="post">
+        <h2 class="text-center">Log in</h2>       
+        <div class="form-group">
+            <input type="email" name="email" class="form-control" placeholder="Username" required="required">
+        </div>
+        <div class="form-group">
+            <input type="password" name="password" class="form-control" placeholder="Password" required="required">
+        </div>
+        <div class="form-group">
+            <button type="submit" name="submit" class="btn btn-primary btn-block">Log in</button>
+        </div>
+       
+    </form>
+    
+</div>
+     
 
 
 
-<?php
+     <?php
 
-include("connection.php");
+      include("connection.php");
 
-if(isset($_POST['submit']))
-{
- $em = $_POST['email'];
- $pas = $_POST['password'];
+      if(isset($_POST['submit']))
+      {
+      $em = $_POST['email'];
+      $pas = $_POST['password'];
 
-  $query = "SELECT * FROM login Where EMAIL = '$em'";
-  $data= mysqli_query($conn,$query);
-  $result = mysqli_fetch_assoc($data);
-
-
- if(($result['Password'] == $pas) && ($result['Email'] == $em))
- {
-  session_start();
-  $_SESSION['user'] =$result['Email'];
-  $_SESSION['id'] =$result['id'];
-  header('location:project.php');
-}
- else
-  {
-  echo "<script>alert('Your Email or Password is incorrect')</script>";
-  }
-}
- ?>
+        $query = "SELECT * FROM login Where EMAIL = '$em'";
+        $data= mysqli_query($conn,$query);
+        $result = mysqli_fetch_assoc($data);
 
 
-
-
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+      if(($result['Password'] == $pas) && ($result['Email'] == $em))
+      {
+        session_start();
+        $_SESSION['user'] =$result['Email'];
+        $_SESSION['id'] =$result['id'];
+        header('location:project.php');
+      }
+      else
+        {
+        echo "<script>alert('Your Email or Password is incorrect')</script>";
+        }
+      }
+      ?>
+ <?php include('footer.php'); ?>
   </body>
 </html>
